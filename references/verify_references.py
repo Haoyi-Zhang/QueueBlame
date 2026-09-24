@@ -275,7 +275,7 @@ def main() -> None:
         "network": "NetworkRefs", "queueing": "QueueingRefs", "reproducibility": "ReproRefs",
     }
     for theme, command in command_names.items():
-        lines.append(r"\newcommand{\" + command + "}{\\cite{" + ",".join(groups[theme]) + "}}")
+        lines.append("\\newcommand{\\" + command + "}{\\cite{" + ",".join(groups[theme]) + "}}")
     lines.append(r"\newcommand{\VerifiedReferenceCount}{" + str(len(audit)) + "}")
     (ROOT / "reference-groups.tex").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(json.dumps({"verified": len(audit), "themes": dict(theme_counts), "failures": failures}, sort_keys=True))
