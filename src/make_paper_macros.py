@@ -3,9 +3,10 @@ import json
 from pathlib import Path
 
 artifact = Path(__file__).resolve().parents[1]
-summary = json.loads((artifact / 'results/frozen/summary.json').read_text())
-micro = json.loads((artifact / 'results/frozen/micro-exhaustive.json').read_text())
+summary = json.loads((artifact / 'results/frozen/summary.json').read_text(encoding='utf-8'))
+micro = json.loads((artifact / 'results/frozen/micro-exhaustive.json').read_text(encoding='utf-8'))
 hist = summary['core_size_histogram']
+categories = summary['mutation_categories']
 macros = {
     'ResultCases': summary['cases'],
     'ResultFamilies': summary['trace_families'],
@@ -17,6 +18,15 @@ macros = {
     'ResultUpper': summary['upper_cores'],
     'ResultLower': summary['lower_cores'],
     'ResultMutations': summary['mutations_rejected'],
+    'MutationCore': categories['core']['attempted'],
+    'MutationDeletionWitness': categories['deletion-witness']['attempted'],
+    'MutationIdentity': categories['identity']['attempted'],
+    'MutationMatrixWitness': categories['matrix-witness']['attempted'],
+    'MutationMetadataTypes': categories['metadata-types']['attempted'],
+    'MutationSchema': categories['schema']['attempted'],
+    'MutationTraceContinuity': categories['trace-continuity']['attempted'],
+    'MutationTraceDirection': categories['trace-direction']['attempted'],
+    'MutationTraceValues': categories['trace-values']['attempted'],
     'MicroInstances': micro['instances'],
     'MicroCoreInstances': micro['sampled_core_instances'],
     'CoreSizeOne': hist.get('1', 0),

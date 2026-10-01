@@ -1,0 +1,38 @@
+{
+  "checks": {
+    "all_mutations_rejected": true,
+    "certificates_match_cases": true,
+    "checker_oracle_import_boundaries": true,
+    "corpus_cases_96": true,
+    "fresh_regeneration_disclosed": true,
+    "micro_agreement": true,
+    "mutation_keys_unique": true,
+    "oracle_agreement": true,
+    "summary_cases_match": true,
+    "summary_certificate_count_match": true,
+    "summary_mutation_count_match": true
+  },
+  "counts": {
+    "aggregate_path_steps": 864,
+    "cases": 96,
+    "certificates": 96,
+    "matrix_transport_steps": 1728,
+    "micro_instances": 69421,
+    "mutations": 3616
+  },
+  "imports": {
+    "checker.py": [
+      "__future__",
+      "json",
+      "pathlib",
+      "typing"
+    ],
+    "dp_oracle.py": [
+      "__future__",
+      "itertools",
+      "typing"
+    ]
+  },
+  "schema": "cbcqv-artifact-release-audit-v1",
+  "status": "PASS"
+}

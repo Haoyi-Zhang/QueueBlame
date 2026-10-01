@@ -1,0 +1,104 @@
+{
+  "checks": {
+    "all_group_macros_used_once": true,
+    "aux_equals_bib": true,
+    "bbl_equals_bib": true,
+    "bib_keys_unique": true,
+    "no_nocite": true,
+    "source_equals_bib": true
+  },
+  "keys": [
+    "gale1957flows",
+    "ford1956maxflow",
+    "hall1935representatives",
+    "ryser1957matrices",
+    "karp1972reducibility",
+    "hopcroft1973matching",
+    "chvatal1979setcover",
+    "feige1998setcover",
+    "hoare1969axiomatic",
+    "dijkstra1975guarded",
+    "pnueli1977temporal",
+    "cousot1977abstract",
+    "clarke1986automatic",
+    "bryant1986bdd",
+    "alur1994timed",
+    "mourabjorner2008z3",
+    "necula1997pcc",
+    "leroy2009compcert",
+    "reiter1987diagnosis",
+    "dekleer1987faults",
+    "junker2004quickxplain",
+    "liffiton2008mus",
+    "darwiche2002kcmap",
+    "ribeiro2016lime",
+    "miller2019explanation",
+    "ignatiev2019abduction",
+    "mai2011anteater",
+    "alshaer2009flowchecker",
+    "anderson2014netkat",
+    "foster2011frenetic",
+    "stoenescu2016symnet",
+    "beckett2017minesweeper",
+    "naryana2016pathqueries",
+    "xie2005reachability",
+    "kazemian2012hsa",
+    "khurshid2013veriflow",
+    "fogel2015batfish",
+    "raghunathan2025quasi",
+    "cruz1991calculus1",
+    "cruz1991calculus2",
+    "parekh1993gps1",
+    "parekh1994gps2",
+    "demers1989fairqueue",
+    "zhang1990virtualclock",
+    "shreedhar1996drr",
+    "bennett1996wf2q",
+    "floyd1993red",
+    "nichols2012codel",
+    "alizadeh2010dctcp",
+    "mittal2015timely",
+    "peng2011reproducible",
+    "sandve2013rules",
+    "wilson2014bestpractices",
+    "collberg2016repeatability",
+    "acm2020badging"
+  ],
+  "macro_key_counts": {
+    "CombinatoricsRefs": 8,
+    "DiagnosisRefs": 8,
+    "FormalRefs": 10,
+    "NetworkRefs": 12,
+    "QueueingRefs": 12,
+    "ReproRefs": 5
+  },
+  "macro_uses": {
+    "CombinatoricsRefs": [
+      93
+    ],
+    "DiagnosisRefs": [
+      90
+    ],
+    "FormalRefs": [
+      87
+    ],
+    "NetworkRefs": [
+      82
+    ],
+    "QueueingRefs": [
+      84
+    ],
+    "ReproRefs": [
+      96
+    ]
+  },
+  "missing_from_aux": [],
+  "missing_from_bbl": [],
+  "missing_from_source": [],
+  "reference_count": 55,
+  "schema": "cbcqv-bibliography-usage-audit-v1",
+  "status": "PASS",
+  "unknown_in_aux": [],
+  "unknown_in_bbl": [],
+  "unknown_in_source": []
+}

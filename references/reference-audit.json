@@ -1,0 +1,601 @@
+{
+  "corrections": [
+    {
+      "correction": "candidate DOI 10.1145/2018436.2018460 did not identify this paper; replaced with the ACM DOI",
+      "key": "mai2011anteater"
+    },
+    {
+      "correction": "candidate year key retained for compatibility; publication year is 2010",
+      "key": "alshaer2009flowchecker"
+    },
+    {
+      "correction": "candidate DOI 10.1145/2934872.2934880 identified a different SIGCOMM paper; replaced with the ACM DOI",
+      "key": "stoenescu2016symnet"
+    },
+    {
+      "correction": "candidate DOI 10.1145/3132747.3132750 identified a different venue item; replaced with the ACM DOI",
+      "key": "beckett2017minesweeper"
+    },
+    {
+      "correction": "candidate 10.5555 identifier omitted in favor of the first-party USENIX record",
+      "key": "naryana2016pathqueries"
+    },
+    {
+      "correction": "candidate DOI ended in 1498494 and resolved to an unrelated paper; corrected to IEEE document 1498492",
+      "key": "xie2005reachability"
+    }
+  ],
+  "count": 55,
+  "failures": [],
+  "note": "Metadata were curated against stable DOI landing pages or first-party publisher/conference pages. This audit records identifiers and corrections; it does not redistribute paper PDFs.",
+  "performed_on": "2026-09-25",
+  "records": [
+    {
+      "author": "David Gale",
+      "identifier": "10.2140/pjm.1957.7.1073",
+      "key": "gale1957flows",
+      "theme": "combinatorics",
+      "title": "A Theorem on Flows in Networks",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.2140/pjm.1957.7.1073",
+      "year": 1957
+    },
+    {
+      "author": "Lester R. Ford, Jr. and Delbert R. Fulkerson",
+      "identifier": "10.4153/CJM-1956-045-5",
+      "key": "ford1956maxflow",
+      "theme": "combinatorics",
+      "title": "Maximal Flow Through a Network",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.4153/CJM-1956-045-5",
+      "year": 1956
+    },
+    {
+      "author": "Philip Hall",
+      "identifier": "10.1112/jlms/s1-10.37.26",
+      "key": "hall1935representatives",
+      "theme": "combinatorics",
+      "title": "On Representatives of Subsets",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1112/jlms/s1-10.37.26",
+      "year": 1935
+    },
+    {
+      "author": "Herbert J. Ryser",
+      "identifier": "10.4153/CJM-1957-044-3",
+      "key": "ryser1957matrices",
+      "theme": "combinatorics",
+      "title": "Combinatorial Properties of Matrices of Zeros and Ones",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/combinatorial-properties-of-matrices-of-zeros-and-ones/4BE766CCFDF1704C196AA182C0C5EC88",
+      "year": 1957
+    },
+    {
+      "author": "Richard M. Karp",
+      "identifier": "10.1007/978-1-4684-2001-2_9",
+      "key": "karp1972reducibility",
+      "theme": "combinatorics",
+      "title": "Reducibility Among Combinatorial Problems",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1007/978-1-4684-2001-2_9",
+      "year": 1972
+    },
+    {
+      "author": "John E. Hopcroft and Richard M. Karp",
+      "identifier": "10.1137/0202019",
+      "key": "hopcroft1973matching",
+      "theme": "combinatorics",
+      "title": "An $n^{5/2}$ Algorithm for Maximum Matchings in Bipartite Graphs",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1137/0202019",
+      "year": 1973
+    },
+    {
+      "author": "V{\\'a}clav Chv{\\'a}tal",
+      "identifier": "10.1287/moor.4.3.233",
+      "key": "chvatal1979setcover",
+      "theme": "combinatorics",
+      "title": "A Greedy Heuristic for the Set-Covering Problem",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1287/moor.4.3.233",
+      "year": 1979
+    },
+    {
+      "author": "Uriel Feige",
+      "identifier": "10.1145/285055.285059",
+      "key": "feige1998setcover",
+      "theme": "combinatorics",
+      "title": "A Threshold of $\\ln n$ for Approximating Set Cover",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/285055.285059",
+      "year": 1998
+    },
+    {
+      "author": "C. A. R. Hoare",
+      "identifier": "10.1145/363235.363259",
+      "key": "hoare1969axiomatic",
+      "theme": "formal",
+      "title": "An Axiomatic Basis for Computer Programming",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/363235.363259",
+      "year": 1969
+    },
+    {
+      "author": "Edsger W. Dijkstra",
+      "identifier": "10.1145/360933.360975",
+      "key": "dijkstra1975guarded",
+      "theme": "formal",
+      "title": "Guarded Commands, Nondeterminacy and Formal Derivation of Programs",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/360933.360975",
+      "year": 1975
+    },
+    {
+      "author": "Amir Pnueli",
+      "identifier": "10.1109/SFCS.1977.32",
+      "key": "pnueli1977temporal",
+      "theme": "formal",
+      "title": "The Temporal Logic of Programs",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1109/SFCS.1977.32",
+      "year": 1977
+    },
+    {
+      "author": "Patrick Cousot and Radhia Cousot",
+      "identifier": "10.1145/512950.512973",
+      "key": "cousot1977abstract",
+      "theme": "formal",
+      "title": "Abstract Interpretation: A Unified Lattice Model for Static Analysis of Programs by Construction or Approximation of Fixpoints",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/512950.512973",
+      "year": 1977
+    },
+    {
+      "author": "Edmund M. Clarke and E. Allen Emerson and A. Prasad Sistla",
+      "identifier": "10.1145/5397.5399",
+      "key": "clarke1986automatic",
+      "theme": "formal",
+      "title": "Automatic Verification of Finite-State Concurrent Systems Using Temporal Logic Specifications",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/5397.5399",
+      "year": 1986
+    },
+    {
+      "author": "Randal E. Bryant",
+      "identifier": "10.1109/TC.1986.1676819",
+      "key": "bryant1986bdd",
+      "theme": "formal",
+      "title": "Graph-Based Algorithms for Boolean Function Manipulation",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1109/TC.1986.1676819",
+      "year": 1986
+    },
+    {
+      "author": "Rajeev Alur and David L. Dill",
+      "identifier": "10.1006/inco.1994.1023",
+      "key": "alur1994timed",
+      "theme": "formal",
+      "title": "A Theory of Timed Automata",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1006/inco.1994.1023",
+      "year": 1994
+    },
+    {
+      "author": "Leonardo de Moura and Nikolaj Bj{\\o}rner",
+      "identifier": "10.1007/978-3-540-78800-3_24",
+      "key": "mourabjorner2008z3",
+      "theme": "formal",
+      "title": "Z3: An Efficient SMT Solver",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1007/978-3-540-78800-3_24",
+      "year": 2008
+    },
+    {
+      "author": "George C. Necula",
+      "identifier": "10.1145/263699.263712",
+      "key": "necula1997pcc",
+      "theme": "formal",
+      "title": "Proof-Carrying Code",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/263699.263712",
+      "year": 1997
+    },
+    {
+      "author": "Xavier Leroy",
+      "identifier": "10.1145/1538788.1538814",
+      "key": "leroy2009compcert",
+      "theme": "formal",
+      "title": "Formal Verification of a Realistic Compiler",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/1538788.1538814",
+      "year": 2009
+    },
+    {
+      "author": "Raymond Reiter",
+      "identifier": "10.1016/0004-3702(87)90062-2",
+      "key": "reiter1987diagnosis",
+      "theme": "diagnosis",
+      "title": "A Theory of Diagnosis from First Principles",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1016/0004-3702(87)90062-2",
+      "year": 1987
+    },
+    {
+      "author": "Johan de Kleer and Brian C. Williams",
+      "identifier": "10.1016/0004-3702(87)90063-4",
+      "key": "dekleer1987faults",
+      "theme": "diagnosis",
+      "title": "Diagnosing Multiple Faults",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1016/0004-3702(87)90063-4",
+      "year": 1987
+    },
+    {
+      "author": "Ulrich Junker",
+      "identifier": "10.1007/978-3-540-30201-8_52",
+      "key": "junker2004quickxplain",
+      "theme": "diagnosis",
+      "title": "QUICKXPLAIN: Preferred Explanations and Relaxations for Over-Constrained Problems",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1007/978-3-540-30201-8_52",
+      "year": 2004
+    },
+    {
+      "author": "Mark H. Liffiton and Karem A. Sakallah",
+      "identifier": "10.1007/s10601-007-9034-z",
+      "key": "liffiton2008mus",
+      "theme": "diagnosis",
+      "title": "Algorithms for Computing Minimal Unsatisfiable Subsets of Constraints",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1007/s10601-007-9034-z",
+      "year": 2008
+    },
+    {
+      "author": "Adnan Darwiche",
+      "identifier": "10.1613/jair.989",
+      "key": "darwiche2002kcmap",
+      "theme": "diagnosis",
+      "title": "A Knowledge Compilation Map",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1613/jair.989",
+      "year": 2002
+    },
+    {
+      "author": "Marco Tulio Ribeiro and Sameer Singh and Carlos Guestrin",
+      "identifier": "10.1145/2939672.2939778",
+      "key": "ribeiro2016lime",
+      "theme": "diagnosis",
+      "title": "Why Should I Trust You? Explaining the Predictions of Any Classifier",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/2939672.2939778",
+      "year": 2016
+    },
+    {
+      "author": "Tim Miller",
+      "identifier": "10.1016/j.artint.2018.07.007",
+      "key": "miller2019explanation",
+      "theme": "diagnosis",
+      "title": "Explanation in Artificial Intelligence: Insights from the Social Sciences",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1016/j.artint.2018.07.007",
+      "year": 2019
+    },
+    {
+      "author": "Alexey Ignatiev and Nina Narodytska and Jo{\\~a}o Marques-Silva",
+      "identifier": "10.1609/aaai.v33i01.33011511",
+      "key": "ignatiev2019abduction",
+      "theme": "diagnosis",
+      "title": "Abduction-Based Explanations for Machine Learning Models",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1609/aaai.v33i01.33011511",
+      "year": 2019
+    },
+    {
+      "author": "Haohui Mai and Ahmed Khurshid and Rachit Agarwal and Matthew Caesar and P. Brighten Godfrey and Samuel Talmadge King",
+      "correction": "candidate DOI 10.1145/2018436.2018460 did not identify this paper; replaced with the ACM DOI",
+      "identifier": "10.1145/2043164.2018470",
+      "key": "mai2011anteater",
+      "theme": "network",
+      "title": "Debugging the Data Plane with Anteater",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/2043164.2018470",
+      "year": 2011
+    },
+    {
+      "author": "Ehab Al-Shaer and Saeed Al-Haj",
+      "correction": "candidate year key retained for compatibility; publication year is 2010",
+      "identifier": "10.1145/1866898.1866905",
+      "key": "alshaer2009flowchecker",
+      "theme": "network",
+      "title": "FlowChecker: Configuration Analysis and Verification of Federated OpenFlow Infrastructures",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/1866898.1866905",
+      "year": 2010
+    },
+    {
+      "author": "Carolyn Jane Anderson and Nate Foster and Arjun Guha and Jean-Baptiste Jeannin and Dexter Kozen and Cole Schlesinger and David Walker",
+      "identifier": "10.1145/2535838.2535862",
+      "key": "anderson2014netkat",
+      "theme": "network",
+      "title": "NetKAT: Semantic Foundations for Networks",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/2535838.2535862",
+      "year": 2014
+    },
+    {
+      "author": "Nate Foster and Rob Harrison and Michael J. Freedman and Christopher Monsanto and Jennifer Rexford and Alec Story and David Walker",
+      "identifier": "10.1145/2034773.2034812",
+      "key": "foster2011frenetic",
+      "theme": "network",
+      "title": "Frenetic: A Network Programming Language",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/2034773.2034812",
+      "year": 2011
+    },
+    {
+      "author": "Radu Stoenescu and Matei Popovici and Lorina Negreanu and Costin Raiciu",
+      "correction": "candidate DOI 10.1145/2934872.2934880 identified a different SIGCOMM paper; replaced with the ACM DOI",
+      "identifier": "10.1145/2934872.2934881",
+      "key": "stoenescu2016symnet",
+      "theme": "network",
+      "title": "SymNet: Scalable Symbolic Execution for Modern Networks",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/2934872.2934881",
+      "year": 2016
+    },
+    {
+      "author": "Ryan Beckett and Aarti Gupta and Ratul Mahajan and David Walker",
+      "correction": "candidate DOI 10.1145/3132747.3132750 identified a different venue item; replaced with the ACM DOI",
+      "identifier": "10.1145/3098822.3098834",
+      "key": "beckett2017minesweeper",
+      "theme": "network",
+      "title": "A General Approach to Network Configuration Verification",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/3098822.3098834",
+      "year": 2017
+    },
+    {
+      "author": "Srinivas Narayana and Mina Tahmasbi and Jennifer Rexford and David Walker",
+      "correction": "candidate 10.5555 identifier omitted in favor of the first-party USENIX record",
+      "identifier": "https://www.usenix.org/conference/nsdi16/technical-sessions/presentation/narayana",
+      "key": "naryana2016pathqueries",
+      "theme": "network",
+      "title": "Compiling Path Queries",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://www.usenix.org/conference/nsdi16/technical-sessions/presentation/narayana",
+      "year": 2016
+    },
+    {
+      "author": "Geoffrey G. Xie and Jibin Zhan and David A. Maltz and Hui Zhang and Albert Greenberg and Gisli Hjalmtysson and Jennifer Rexford",
+      "correction": "candidate DOI ended in 1498494 and resolved to an unrelated paper; corrected to IEEE document 1498492",
+      "identifier": "10.1109/INFCOM.2005.1498492",
+      "key": "xie2005reachability",
+      "theme": "network",
+      "title": "On Static Reachability Analysis of IP Networks",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1109/INFCOM.2005.1498492",
+      "year": 2005
+    },
+    {
+      "author": "Peyman Kazemian and George Varghese and Nick McKeown",
+      "identifier": "https://www.usenix.org/conference/nsdi12/technical-sessions/presentation/kazemian",
+      "key": "kazemian2012hsa",
+      "theme": "network",
+      "title": "Header Space Analysis: Static Checking for Networks",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://www.usenix.org/conference/nsdi12/technical-sessions/presentation/kazemian",
+      "year": 2012
+    },
+    {
+      "author": "Ahmed Khurshid and Xuan Zou and Wenxuan Zhou and Matthew Caesar and P. Brighten Godfrey",
+      "identifier": "https://www.usenix.org/conference/nsdi13/technical-sessions/presentation/khurshid",
+      "key": "khurshid2013veriflow",
+      "theme": "network",
+      "title": "VeriFlow: Verifying Network-Wide Invariants in Real Time",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://www.usenix.org/conference/nsdi13/technical-sessions/presentation/khurshid",
+      "year": 2013
+    },
+    {
+      "author": "Ari Fogel and Stanley Fung and Luis Pedrosa and Meg Walraed-Sullivan and Ramesh Govindan and Ratul Mahajan and Todd D. Millstein",
+      "identifier": "https://www.usenix.org/conference/nsdi15/technical-sessions/presentation/fogel",
+      "key": "fogel2015batfish",
+      "theme": "network",
+      "title": "A General Approach to Network Configuration Analysis",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://www.usenix.org/conference/nsdi15/technical-sessions/presentation/fogel",
+      "year": 2015
+    },
+    {
+      "author": "Divya Raghunathan and Maria Apostolaki and Aarti Gupta",
+      "identifier": "https://www.usenix.org/conference/nsdi25/presentation/raghunathan",
+      "key": "raghunathan2025quasi",
+      "theme": "network",
+      "title": "A Layered Formal Methods Approach to Answering Queue-Related Queries",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://www.usenix.org/conference/nsdi25/presentation/raghunathan",
+      "year": 2025
+    },
+    {
+      "author": "Ren{\\'e} L. Cruz",
+      "identifier": "10.1109/26.87170",
+      "key": "cruz1991calculus1",
+      "theme": "queueing",
+      "title": "A Calculus for Network Delay, Part I: Network Elements in Isolation",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1109/26.87170",
+      "year": 1991
+    },
+    {
+      "author": "Ren{\\'e} L. Cruz",
+      "identifier": "10.1109/26.87171",
+      "key": "cruz1991calculus2",
+      "theme": "queueing",
+      "title": "A Calculus for Network Delay, Part II: Network Analysis",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1109/26.87171",
+      "year": 1991
+    },
+    {
+      "author": "Abhay K. Parekh and Robert G. Gallager",
+      "identifier": "10.1109/90.234856",
+      "key": "parekh1993gps1",
+      "theme": "queueing",
+      "title": "A Generalized Processor Sharing Approach to Flow Control in Integrated Services Networks: The Single-Node Case",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1109/90.234856",
+      "year": 1993
+    },
+    {
+      "author": "Abhay K. Parekh and Robert G. Gallager",
+      "identifier": "10.1109/90.298432",
+      "key": "parekh1994gps2",
+      "theme": "queueing",
+      "title": "A Generalized Processor Sharing Approach to Flow Control in Integrated Services Networks: The Multiple Node Case",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1109/90.298432",
+      "year": 1994
+    },
+    {
+      "author": "Alan Demers and Srinivasan Keshav and Scott Shenker",
+      "identifier": "10.1145/75246.75248",
+      "key": "demers1989fairqueue",
+      "theme": "queueing",
+      "title": "Analysis and Simulation of a Fair Queueing Algorithm",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/75246.75248",
+      "year": 1989
+    },
+    {
+      "author": "Lixia Zhang",
+      "identifier": "10.1145/205447.205454",
+      "key": "zhang1990virtualclock",
+      "theme": "queueing",
+      "title": "VirtualClock: A New Traffic Control Algorithm for Packet Switching Networks",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/205447.205454",
+      "year": 1990
+    },
+    {
+      "author": "M. Shreedhar and George Varghese",
+      "identifier": "10.1109/90.502236",
+      "key": "shreedhar1996drr",
+      "theme": "queueing",
+      "title": "Efficient Fair Queueing Using Deficit Round-Robin",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1109/90.502236",
+      "year": 1996
+    },
+    {
+      "author": "Jon C. R. Bennett and Hui Zhang",
+      "identifier": "10.1109/90.502237",
+      "key": "bennett1996wf2q",
+      "theme": "queueing",
+      "title": "WF2Q: Worst-Case Fair Weighted Fair Queueing",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1109/90.502237",
+      "year": 1996
+    },
+    {
+      "author": "Sally Floyd and Van Jacobson",
+      "identifier": "10.1109/90.251892",
+      "key": "floyd1993red",
+      "theme": "queueing",
+      "title": "Random Early Detection Gateways for Congestion Avoidance",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1109/90.251892",
+      "year": 1993
+    },
+    {
+      "author": "Kathleen Nichols and Van Jacobson",
+      "identifier": "10.1145/2208917.2209336",
+      "key": "nichols2012codel",
+      "theme": "queueing",
+      "title": "Controlling Queue Delay",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/2208917.2209336",
+      "year": 2012
+    },
+    {
+      "author": "Mohammad Alizadeh and Albert Greenberg and David A. Maltz and Jitendra Padhye and Parveen Patel and Balaji Prabhakar and Sudipta Sengupta and Murari Sridharan",
+      "identifier": "10.1145/1851182.1851192",
+      "key": "alizadeh2010dctcp",
+      "theme": "queueing",
+      "title": "Data Center TCP (DCTCP)",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/1851182.1851192",
+      "year": 2010
+    },
+    {
+      "author": "Radhika Mittal and Vinh The Lam and Nandita Dukkipati and Emily Blem and Hassan Wassel and Monia Ghobadi and Amin Vahdat and Yaogong Wang and David Wetherall and David Zats",
+      "identifier": "10.1145/2785956.2787510",
+      "key": "mittal2015timely",
+      "theme": "queueing",
+      "title": "TIMELY: RTT-Based Congestion Control for the Datacenter",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/2785956.2787510",
+      "year": 2015
+    },
+    {
+      "author": "Roger D. Peng",
+      "identifier": "10.1126/science.1213847",
+      "key": "peng2011reproducible",
+      "theme": "reproducibility",
+      "title": "Reproducible Research in Computational Science",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1126/science.1213847",
+      "year": 2011
+    },
+    {
+      "author": "Geir Kjetil Sandve and Anton Nekrutenko and James Taylor and Eivind Hovig",
+      "identifier": "10.1371/journal.pcbi.1003285",
+      "key": "sandve2013rules",
+      "theme": "reproducibility",
+      "title": "Ten Simple Rules for Reproducible Computational Research",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1371/journal.pcbi.1003285",
+      "year": 2013
+    },
+    {
+      "author": "Greg Wilson and D. A. Aruliah and C. Titus Brown and Neil P. Chue Hong and Matt Davis and Richard T. Guy and Steven H. D. Haddock and Kathryn D. Huff and Ian M. Mitchell and Mark D. Plumbley and Ben Waugh and Ethan P. White and Paul Wilson",
+      "identifier": "10.1371/journal.pbio.1001745",
+      "key": "wilson2014bestpractices",
+      "theme": "reproducibility",
+      "title": "Best Practices for Scientific Computing",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1371/journal.pbio.1001745",
+      "year": 2014
+    },
+    {
+      "author": "Christian Collberg and Todd A. Proebsting",
+      "identifier": "10.1145/2812803",
+      "key": "collberg2016repeatability",
+      "theme": "reproducibility",
+      "title": "Repeatability in Computer Systems Research",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://doi.org/10.1145/2812803",
+      "year": 2016
+    },
+    {
+      "author": "{Association for Computing Machinery}",
+      "identifier": "https://www.acm.org/publications/policies/artifact-review-and-badging-current",
+      "key": "acm2020badging",
+      "theme": "reproducibility",
+      "title": "Artifact Review and Badging",
+      "verification_status": "curated_against_stable_identifier",
+      "verification_url": "https://www.acm.org/publications/policies/artifact-review-and-badging-current",
+      "year": 2020
+    }
+  ],
+  "schema": "cbcqv-reference-audit-v3",
+  "theme_counts": {
+    "combinatorics": 8,
+    "diagnosis": 8,
+    "formal": 10,
+    "network": 12,
+    "queueing": 12,
+    "reproducibility": 5
+  },
+  "unique_identifiers": true,
+  "unique_keys": true
+}

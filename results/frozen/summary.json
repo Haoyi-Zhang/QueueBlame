@@ -1,0 +1,83 @@
+{
+  "aggregate_path_steps_validated": 864,
+  "cases": 96,
+  "certificates_accepted": 96,
+  "compatible": 32,
+  "core_size_histogram": {
+    "1": 16,
+    "2": 16,
+    "3": 16,
+    "4": 16
+  },
+  "incompatible": 64,
+  "lower_cores": 32,
+  "matrix_transport_steps_replayed": 1728,
+  "mutation_categories": {
+    "core": {
+      "accepted": 0,
+      "attempted": 576,
+      "rejected": 576
+    },
+    "deletion-witness": {
+      "accepted": 0,
+      "attempted": 640,
+      "rejected": 640
+    },
+    "identity": {
+      "accepted": 0,
+      "attempted": 96,
+      "rejected": 96
+    },
+    "matrix-witness": {
+      "accepted": 0,
+      "attempted": 192,
+      "rejected": 192
+    },
+    "metadata-types": {
+      "accepted": 0,
+      "attempted": 1344,
+      "rejected": 1344
+    },
+    "schema": {
+      "accepted": 0,
+      "attempted": 384,
+      "rejected": 384
+    },
+    "trace-continuity": {
+      "accepted": 0,
+      "attempted": 96,
+      "rejected": 96
+    },
+    "trace-direction": {
+      "accepted": 0,
+      "attempted": 96,
+      "rejected": 96
+    },
+    "trace-values": {
+      "accepted": 0,
+      "attempted": 192,
+      "rejected": 192
+    }
+  },
+  "mutations_accepted": 0,
+  "mutations_attempted": 3616,
+  "mutations_rejected": 3616,
+  "oracle_disagreements": 0,
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "provenance": {
+    "kind": "fresh deterministic regeneration from retained corpus and source",
+    "lost_prior_run_recovered": false
+  },
+  "python": "3.13.5",
+  "schema": "cbcqv-results-v3",
+  "scientific_work_units": {
+    "aggregate_path_steps": 864,
+    "certificate_replays": 96,
+    "corpus_oracle_instances": 96,
+    "malformed_certificate_checks": 3616,
+    "matrix_transport_steps": 1728
+  },
+  "trace_families": 96,
+  "traces": 384,
+  "upper_cores": 32
+}

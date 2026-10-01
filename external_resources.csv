@@ -1,0 +1,8 @@
+resource,role,stable_identifier,required_for_scientific_replay,redistributed,notes
+Python 3.10+ standard library,scientific execution,python.org,no,no,no third-party Python package or solver
+IEEEtran class,manuscript layout,matched supplied TEMPLATE.zip,no,yes,unmodified IEEEtran.cls
+IEEEtran bibliography style,bibliography layout,matched supplied TEMPLATE.zip,no,yes,unmodified IEEEtran.bst
+DOI landing pages,bibliographic provenance,https://doi.org/,no,no,stable identifiers retained in audit
+USENIX conference pages,bibliographic provenance,https://www.usenix.org/,no,no,used for non-DOI network papers
+IEEE TPDS author information,venue-policy check,https://www.computer.org/csdl/journal/td/write-for-us,no,no,must be rechecked by human authors at submission
+IEEE AI-content policy,disclosure requirement,https://journals.ieeeauthorcenter.ieee.org/,no,no,dated policy note retained in paper/venue-check.md

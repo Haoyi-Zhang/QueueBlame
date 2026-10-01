@@ -1,0 +1,11 @@
+id,claim,analytical_source,executable_evidence,boundary,status
+C1,A strict balancing step preserves every binary row total,"main Lemma 1; supplement transport proof","matrix replay in checker; 1728 concrete transfers","binary cells and supplied path only",supported
+C2,A certified member root represents every descendant in its rooted family,"main root theorem","all 96 families and 384 traces parsed and replayed","upstream queue validity and family completeness trusted",supported
+C3,Selected exact counters are feasible iff all upper/lower cardinality margins hold,"main four-cut Hoffman proof; supplement expanded proof","flow witnesses; 69421 independent DP instances","complete row-slot admissibility and exact counters",supported
+C4,The first failed extremal prefix is a globally minimum-cardinality conflict,"main prefix corollary and minimum-core theorem","3231 sampled exhaustive subset checks; deletion witnesses","unweighted cardinality objective",supported
+C5,Checker acceptance has the stated conditional meaning,"main checker proposition","96 honest certificates; 3616 malformed certificates; strict-type regressions","checker is ordinary trusted Python",supported
+C6,Selected serialization order is nonsemantic,"set-valued model contract","case-001 selected-order permutation regression","duplicate ports still rejected",supported
+C7,Checker runtime is not linear in serialized certificate size,"source-level loop accounting","full matrix copy and two full column scans per path step","complexity is analytical; no throughput claim",supported
+C8,Unrestricted distinct-label bounded path relaxation is NP-hard,"Set Cover reduction with private intermediate vertices","proof/source inspection only","not an empirical prevalence claim",supported
+C9,Fast verification replays certificates and deterministic mutations but not the micro search,"artifact command semantics","verify_bundle output labels micro evidence recorded","full recomputation requires run_all.sh",supported
+C10,The frozen result is a fresh regeneration rather than recovery of the missing old run,"regeneration provenance note","first 12 surviving certificates compare equal; 96-result full rerun","old cases 012-095 and old aggregate files unavailable",supported

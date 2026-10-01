@@ -1,69 +1,83 @@
-# Compositional Blame Cores — Reproducibility Artifact
+# Compositional Blame Cores - Reproducibility Artifact
 
-This repository implements and checks certificates for a restricted layered queue-verification model. It is deliberately dependency-light: the scientific code uses only the Python 3.10+ standard library and does not require a solver, network access, downloaded dataset, or the paper directory.
+This repository implements and checks certificates for the restricted model in *Compositional Blame Cores for Layered Queue Verification*. The scientific code uses only the Python 3.10+ standard library. It does not require a solver, network access, a downloaded data set, or the paper directory.
 
-## Model
+## Scope
 
-A queue-height trace is represented by column totals of an unknown binary input-by-time matrix. A selected subset of input rows has exact packet-count totals. A trace family carries a common dominating root and explicit unit balancing paths from that root. The checker decides whether the selected totals are compatible with the family. On incompatibility, it verifies a globally minimum-cardinality selected-counter core.
+A trace is the column-sum vector of an unknown binary input-by-time matrix. A selected set of input rows has exact packet-count totals. Each finite trace family includes a concrete root member and explicit strict balancing paths from that root to every descendant. Under complete row-slot admissibility, the artifact decides whether the selected totals are compatible with the root and therefore with the whole rooted family. For an incompatible instance it emits and checks a globally minimum-cardinality selected-counter conflict.
+
+This is not an upstream queue verifier, a causal fault diagnosis, a noisy-counter model, or a production deployment. The finite corpus tests the stated interface and implementation.
 
 ## Components
 
 - `src/producer.py`: deterministic certificate producer; may call the lower-bound circulation implementation in `src/flow.py`.
-- `src/checker.py`: standalone strict checker. It does not import producer, flow, model, or oracle code.
-- `src/dp_oracle.py`: independently implemented dynamic-programming oracle. It does not import producer, flow, model, or checker code.
+- `src/checker.py`: standalone strict checker. It imports no producer, flow, theorem/model, mutation, or oracle module.
+- `src/dp_oracle.py`: structurally different dynamic-programming oracle; it imports no producer, flow, model, checker, or mutation module.
 - `src/generate_corpus.py`: deterministic 96-case corpus generator.
-- `src/micro_exhaustive.py`: independent exhaustive small-instance comparison.
-- `src/mutations.py`: systematic malformed-certificate generator.
-- `src/run.py`: corpus production, checking, oracle comparison, and mutation campaign.
-- `src/verify_bundle.py`: replay of the frozen evidence set.
-- `src/compare.py`: semantic comparison of a regeneration against frozen results.
+- `src/micro_exhaustive.py`: bounded exhaustive theorem-versus-DP campaign.
+- `src/mutations.py`: complete deterministic malformed-certificate generator; there is no tail limit.
+- `src/run.py`: candidate production, checking, oracle comparison, and negative-test execution.
+- `src/verify_bundle.py`: replays all frozen certificates and reconstructs/replays every frozen negative mutation. It reads, but does not recompute, the stored micro-exhaustive record.
+- `src/compare.py`: compares every deterministic scientific field and every certificate in two result directories.
+
+## Retained result
+
+The current frozen result was freshly regenerated from the retained 96-case corpus after the checker repair. The unavailable prior run was not claimed as recovered. The first 12 surviving old certificates were byte-for-byte equivalent as parsed JSON to the regenerated certificates; cases 012-095 and all aggregate result files are new deterministic outputs of the retained source. See `results/regeneration-provenance.md`.
+
+The frozen evidence contains:
+
+- 96 trace families and 384 traces;
+- 32 compatible, 32 upper-conflict, and 32 lower-conflict cases;
+- 864 aggregate root-path steps;
+- 1,728 concrete matrix-transfer replays (one root matrix for compatible cases and one matrix per deletion witness for incompatible cases);
+- 3,616 executed malformed-certificate checks, all rejected;
+- 69,421 bounded exhaustive theorem-versus-DP instances and 3,231 sampled exhaustive minimum-core instances, with zero disagreements.
+
+These are separate counters. In particular, 864 aggregate path steps are not the same quantity as 1,728 concrete matrix-transfer executions.
 
 ## Fast verification
 
 ```bash
 export PYTHONDONTWRITEBYTECODE=1
-python3 tests/test_contract.py
-python3 tests/test_frozen_results.py
+python3 -m unittest discover -s tests -p 'test_*.py' -v
 python3 src/verify_bundle.py
 ```
 
-Expected final verifier status includes 96 replayed cases, 69,421 independent micro instances, zero mismatches, and 64 rejected malformed certificates.
+The test suite covers exact runtime types, `0/false`, `1/true`, equal-valued floats, production-side path vectors, selected-counter ordering, minimum-core checks, import boundaries, and duplicate JSON keys. `verify_bundle.py` actually sends every deterministic mutation to the checker and validates mutation-set uniqueness and ledger equality. It reports micro-exhaustive totals as **recorded, not recomputed**.
 
-## Full deterministic regeneration
+## Full isolated regeneration
 
 ```bash
 sh run_all.sh
 ```
 
-The script generates a fresh corpus and result directory, runs the independent exhaustive campaign, and compares all deterministic scientific fields with `results/frozen/`. Runtime, wall-clock, and memory telemetry are excluded from semantic equality because they depend on the host.
+`run_all.sh` creates a separate temporary candidate directory. It regenerates and compares the corpus, runs the full certificate/oracle/mutation campaign, recomputes the micro-exhaustive campaign, replays candidate evidence, runs all tests, and compares all candidate scientific fields and certificates with `results/frozen/`. It never rewrites `data/corpus.json` or `results/frozen/`. A failed candidate is preserved for inspection.
 
-## Manual regeneration
+Manual equivalent:
 
 ```bash
 work="$(mktemp -d)"
 python3 src/generate_corpus.py --output "$work/corpus.json"
 python3 src/run.py --corpus "$work/corpus.json" --output "$work/run"
 python3 src/micro_exhaustive.py --output "$work/run/micro-exhaustive.json"
+python3 src/verify_bundle.py --corpus "$work/corpus.json" --results "$work/run"
 python3 src/compare.py results/frozen "$work/run"
 ```
 
-## Trust and data notes
+## Contract details
 
-- JSON schemas use exact key sets; unknown or missing keys are rejected.
-- Integer fields require actual Python integers. Booleans are rejected even though `bool` subclasses `int` in Python.
-- Compatible certificates contain a full matrix witness.
-- Incompatible certificates contain the extremal prefix, evaluated inequality, and a compatible witness for each one-element deletion.
-- Root paths are replayed as concrete same-row matrix transfers for all compatible and deletion witnesses.
-- The frozen results are data, not executable code.
+- Objects use exact key sets; unknown and missing fields are rejected.
+- Integer-bearing fields are parsed before comparison and require `type(value) is int`; booleans and equal-valued floats are rejected.
+- Selected counters and remaining-port lists are semantic sets with unique ports; serialization order is ignored.
+- Compatible certificates contain one full root matrix.
+- Incompatible certificates contain the extremal prefix, evaluated inequality, and one full compatible matrix for every one-element deletion.
+- Each matrix is independently checked and replayed along every rooted path.
+- The released checker copies a full matrix per trace and rescans all columns before and after every path step. Its runtime is therefore not claimed to be linear in serialized certificate size.
 
-## Results and audits
+## Bibliography assets
 
-- `results/frozen/`: certificates and immutable paper inputs.
-- `results/code-audit.json`: implementation-separation and invariant audit.
-- `results/coverage-audit.json`: supplementary branch/line coverage record when coverage.py is available.
-- `results/FINAL-AUDIT.json`: combined release snapshot.
-- `references/`: provenance-audited bibliography inputs used by the paper.
+`references/` retains the inherited candidate manifest, the resolved 55-record bibliography registry, documented identifier corrections, generated BibTeX and citation-group files, and an offline integrity audit. Bibliographic resolution is not required for the scientific replay and no paper PDFs are redistributed.
 
 ## License
 
-See `LICENSE`. Publication metadata in `references/` remains subject to the policies of its source registries and publishers; the repository does not redistribute paper PDFs.
+See `LICENSE`.

@@ -1,0 +1,120 @@
+$ sh run_all.sh
+CORPUS_MATCH
+{
+  "aggregate_path_steps_validated": 864,
+  "cases": 96,
+  "certificates_accepted": 96,
+  "compatible": 32,
+  "core_size_histogram": {
+    "1": 16,
+    "2": 16,
+    "3": 16,
+    "4": 16
+  },
+  "incompatible": 64,
+  "lower_cores": 32,
+  "matrix_transport_steps_replayed": 1728,
+  "mutation_categories": {
+    "core": {
+      "accepted": 0,
+      "attempted": 576,
+      "rejected": 576
+    },
+    "deletion-witness": {
+      "accepted": 0,
+      "attempted": 640,
+      "rejected": 640
+    },
+    "identity": {
+      "accepted": 0,
+      "attempted": 96,
+      "rejected": 96
+    },
+    "matrix-witness": {
+      "accepted": 0,
+      "attempted": 192,
+      "rejected": 192
+    },
+    "metadata-types": {
+      "accepted": 0,
+      "attempted": 1344,
+      "rejected": 1344
+    },
+    "schema": {
+      "accepted": 0,
+      "attempted": 384,
+      "rejected": 384
+    },
+    "trace-continuity": {
+      "accepted": 0,
+      "attempted": 96,
+      "rejected": 96
+    },
+    "trace-direction": {
+      "accepted": 0,
+      "attempted": 96,
+      "rejected": 96
+    },
+    "trace-values": {
+      "accepted": 0,
+      "attempted": 192,
+      "rejected": 192
+    }
+  },
+  "mutations_accepted": 0,
+  "mutations_attempted": 3616,
+  "mutations_rejected": 3616,
+  "oracle_disagreements": 0,
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "provenance": {
+    "kind": "fresh deterministic regeneration from retained corpus and source",
+    "lost_prior_run_recovered": false
+  },
+  "python": "3.13.5",
+  "schema": "cbcqv-results-v3",
+  "scientific_work_units": {
+    "aggregate_path_steps": 864,
+    "certificate_replays": 96,
+    "corpus_oracle_instances": 96,
+    "malformed_certificate_checks": 3616,
+    "matrix_transport_steps": 1728
+  },
+  "trace_families": 96,
+  "traces": 384,
+  "upper_cores": 32
+}
+{"aggregate_path_steps_recorded": 864, "certificates_replayed_now": 96, "matrix_transport_steps_replayed_now": 1728, "micro_core_instances_recorded_not_recomputed": 3231, "micro_instances_recorded_not_recomputed": 69421, "negative_mutation_categories": {"core": 576, "deletion-witness": 640, "identity": 96, "matrix-witness": 192, "metadata-types": 1344, "schema": 384, "trace-continuity": 96, "trace-direction": 96, "trace-values": 192}, "negative_mutations_replayed_now": 3616, "status": "ACCEPT"}
+test_all_cases_produce_verify (test_contract.ContractTests.test_all_cases_produce_verify) ... ok
+test_directed_bounds (test_contract.ContractTests.test_directed_bounds) ... ok
+test_directed_core_sizes (test_contract.ContractTests.test_directed_core_sizes) ... ok
+test_duplicate_json_key (test_contract.ContractTests.test_duplicate_json_key) ... ok
+test_equal_float_metadata (test_contract.ContractTests.test_equal_float_metadata) ... ok
+test_exact_bool_alias_regressions (test_contract.ContractTests.test_exact_bool_alias_regressions) ... ok
+test_flow_constructor_random_oracle (test_contract.ContractTests.test_flow_constructor_random_oracle) ... ok
+test_import_boundaries (test_contract.ContractTests.test_import_boundaries) ... ok
+test_mutation_coverage (test_contract.ContractTests.test_mutation_coverage) ... ok
+test_nonminimum_core_rejected (test_contract.ContractTests.test_nonminimum_core_rejected) ... ok
+test_production_path_vectors_strict (test_contract.ContractTests.test_production_path_vectors_strict) ... ok
+test_remaining_ports_strict (test_contract.ContractTests.test_remaining_ports_strict) ... ok
+test_row_sums_preserved (test_contract.ContractTests.test_row_sums_preserved) ... ok
+test_selected_order_semantic (test_contract.ContractTests.test_selected_order_semantic) ... ok
+test_certificates (test_frozen_results.FrozenResultsTests.test_certificates) ... ok
+test_micro (test_frozen_results.FrozenResultsTests.test_micro) ... ok
+test_mutation_ledger (test_frozen_results.FrozenResultsTests.test_mutation_ledger) ... ok
+test_summary (test_frozen_results.FrozenResultsTests.test_summary) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.331s
+
+OK
+MATCH
+REGENERATION_MATCH
+
+$ python3 src/verify_bundle.py
+{"aggregate_path_steps_recorded": 864, "certificates_replayed_now": 96, "matrix_transport_steps_replayed_now": 1728, "micro_core_instances_recorded_not_recomputed": 3231, "micro_instances_recorded_not_recomputed": 69421, "negative_mutation_categories": {"core": 576, "deletion-witness": 640, "identity": 96, "matrix-witness": 192, "metadata-types": 1344, "schema": 384, "trace-continuity": 96, "trace-direction": 96, "trace-values": 192}, "negative_mutations_replayed_now": 3616, "status": "ACCEPT"}
+
+$ python3 references/verify_references.py
+{"all_grouped_once": true, "documented_corrections": 6, "nocite_used": false, "references": 55, "status": "PASS", "themes": {"combinatorics": 8, "diagnosis": 8, "formal": 10, "network": 12, "queueing": 12, "reproducibility": 5}}
+
+$ python3 references/audit_usage.py
+{"checks": {"all_group_macros_used_once": true, "aux_equals_bib": true, "bbl_equals_bib": true, "bib_keys_unique": true, "no_nocite": true, "source_equals_bib": true}, "references": 55, "status": "PASS"}
