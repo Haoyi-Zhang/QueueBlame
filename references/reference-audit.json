@@ -172,12 +172,12 @@
     },
     {
       "author": "Rajeev Alur and David L. Dill",
-      "identifier": "10.1006/inco.1994.1023",
+      "identifier": "10.1016/0304-3975(94)90010-8",
       "key": "alur1994timed",
       "theme": "formal",
       "title": "A Theory of Timed Automata",
       "verification_status": "curated_against_stable_identifier",
-      "verification_url": "https://doi.org/10.1006/inco.1994.1023",
+      "verification_url": "https://doi.org/10.1016/0304-3975(94)90010-8",
       "year": 1994
     },
     {
@@ -418,22 +418,22 @@
     },
     {
       "author": "Ren{\\'e} L. Cruz",
-      "identifier": "10.1109/26.87170",
+      "identifier": "10.1109/18.61109",
       "key": "cruz1991calculus1",
       "theme": "queueing",
       "title": "A Calculus for Network Delay, Part I: Network Elements in Isolation",
       "verification_status": "curated_against_stable_identifier",
-      "verification_url": "https://doi.org/10.1109/26.87170",
+      "verification_url": "https://doi.org/10.1109/18.61109",
       "year": 1991
     },
     {
       "author": "Ren{\\'e} L. Cruz",
-      "identifier": "10.1109/26.87171",
+      "identifier": "10.1109/18.61110",
       "key": "cruz1991calculus2",
       "theme": "queueing",
       "title": "A Calculus for Network Delay, Part II: Network Analysis",
       "verification_status": "curated_against_stable_identifier",
-      "verification_url": "https://doi.org/10.1109/26.87171",
+      "verification_url": "https://doi.org/10.1109/18.61110",
       "year": 1991
     },
     {
@@ -468,12 +468,12 @@
     },
     {
       "author": "Lixia Zhang",
-      "identifier": "10.1145/205447.205454",
+      "identifier": "10.1145/99508.99525",
       "key": "zhang1990virtualclock",
       "theme": "queueing",
       "title": "VirtualClock: A New Traffic Control Algorithm for Packet Switching Networks",
       "verification_status": "curated_against_stable_identifier",
-      "verification_url": "https://doi.org/10.1145/205447.205454",
+      "verification_url": "https://doi.org/10.1145/99508.99525",
       "year": 1990
     },
     {
