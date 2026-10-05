@@ -269,7 +269,7 @@
     },
     {
       "author": "George C. Necula",
-      "booktitle": "Proceedings of the ACM SIGPLAN Conference on Programming Language Design and Implementation",
+      "booktitle": "Proceedings of the 24th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages",
       "doi": "10.1145/263699.263712",
       "identifier": "10.1145/263699.263712",
       "key": "necula1997pcc",
@@ -369,7 +369,7 @@
       "year": 2008
     },
     {
-      "author": "Adnan Darwiche",
+      "author": "Adnan Darwiche and Pierre Marquis",
       "doi": "10.1613/jair.989",
       "identifier": "10.1613/jair.989",
       "journal": "Journal of Artificial Intelligence Research",
