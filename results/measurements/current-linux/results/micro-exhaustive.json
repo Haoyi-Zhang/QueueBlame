@@ -1,0 +1,27 @@
+{
+  "core_size_mismatches": 0,
+  "families": [
+    {
+      "core_size_mismatches": 0,
+      "feasibility_mismatches": 0,
+      "instances": 55296,
+      "max_selected": 3,
+      "n": 3,
+      "sampled_core_instances": 2662,
+      "width": 4
+    },
+    {
+      "core_size_mismatches": 0,
+      "feasibility_mismatches": 0,
+      "instances": 14125,
+      "max_selected": 2,
+      "n": 4,
+      "sampled_core_instances": 569,
+      "width": 3
+    }
+  ],
+  "feasibility_mismatches": 0,
+  "instances": 69421,
+  "sampled_core_instances": 3231,
+  "schema": "cbcqv-micro-exhaustive-v2"
+}

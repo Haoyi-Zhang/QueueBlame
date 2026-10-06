@@ -67,7 +67,7 @@ python3 src/compare.py results/frozen "$work/run"
 
 Comparison ignores JSON whitespace and object-key order, not scalar types or list order; in particular, `1`, `true`, and `1.0` are distinct. Duplicate object keys are rejected before comparison. Only the summary's `python` and `platform` metadata fields are excluded. The exhaustive driver writes its complete count record even when a feasibility or minimum-core discrepancy makes the run fail.
 
-The separate `.github/workflows/scientific-checks.yml` is configured to run the tests, corpus comparison, isolated regeneration, exhaustive recomputation, replay and frozen-result comparison from this flat artifact root. It imposes whole-run time and process resource limits and uploads raw outputs even on failure. This configuration does not establish that a hosted run has executed.
+The separate `.github/workflows/scientific-checks.yml` runs the tests, corpus comparison, isolated regeneration, exhaustive recomputation, replay and frozen-result comparison from this flat artifact root. A current Ubuntu 24.04/Python 3.12.14 execution passes all 25 tests and regenerates the exact 96-case corpus, 96 certificates, and four aggregate result objects. The 69,421 feasibility instances and 3,231 sampled minimum-core instances have zero mismatches. Current test and comparison records are in `results/measurements/current-linux/`; prior host timings remain historical. Whole-run time and process resource limits are enforced, with raw output uploaded on failure as well as success.
 
 ## Contract details
 

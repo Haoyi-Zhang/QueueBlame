@@ -1,0 +1,30 @@
+test_all_cases_produce_verify (test_contract.ContractTests.test_all_cases_produce_verify) ... ok
+test_directed_bounds (test_contract.ContractTests.test_directed_bounds) ... ok
+test_directed_core_sizes (test_contract.ContractTests.test_directed_core_sizes) ... ok
+test_duplicate_json_key (test_contract.ContractTests.test_duplicate_json_key) ... ok
+test_equal_float_metadata (test_contract.ContractTests.test_equal_float_metadata) ... ok
+test_exact_bool_alias_regressions (test_contract.ContractTests.test_exact_bool_alias_regressions) ... ok
+test_flow_constructor_random_oracle (test_contract.ContractTests.test_flow_constructor_random_oracle) ... ok
+test_import_boundaries (test_contract.ContractTests.test_import_boundaries) ... ok
+test_mutation_coverage (test_contract.ContractTests.test_mutation_coverage) ... ok
+test_nonminimum_core_rejected (test_contract.ContractTests.test_nonminimum_core_rejected) ... ok
+test_production_path_vectors_strict (test_contract.ContractTests.test_production_path_vectors_strict) ... ok
+test_remaining_ports_strict (test_contract.ContractTests.test_remaining_ports_strict) ... ok
+test_row_sums_preserved (test_contract.ContractTests.test_row_sums_preserved) ... ok
+test_selected_order_semantic (test_contract.ContractTests.test_selected_order_semantic) ... ok
+test_bibliography_identity_tracks_resolved_metadata (test_evidence_gates.EvidenceGateTests.test_bibliography_identity_tracks_resolved_metadata) ... ok
+test_common_loader_rejects_nested_duplicate_keys (test_evidence_gates.EvidenceGateTests.test_common_loader_rejects_nested_duplicate_keys) ... ok
+test_corpus_comparison_rejects_equal_valued_float (test_evidence_gates.EvidenceGateTests.test_corpus_comparison_rejects_equal_valued_float) ... ok
+test_json_types_are_not_value_aliases (test_evidence_gates.EvidenceGateTests.test_json_types_are_not_value_aliases) ... ok
+test_micro_failure_counts_are_written_before_nonzero_gate (test_evidence_gates.EvidenceGateTests.test_micro_failure_counts_are_written_before_nonzero_gate) ... ok
+test_public_bundle_replay_rejects_duplicate_certificate_key (test_evidence_gates.EvidenceGateTests.test_public_bundle_replay_rejects_duplicate_certificate_key) ... ok
+test_result_comparison_checks_types_at_each_payload (test_evidence_gates.EvidenceGateTests.test_result_comparison_checks_types_at_each_payload) ... ok
+test_certificates (test_frozen_results.FrozenResultsTests.test_certificates) ... ok
+test_micro (test_frozen_results.FrozenResultsTests.test_micro) ... ok
+test_mutation_ledger (test_frozen_results.FrozenResultsTests.test_mutation_ledger) ... ok
+test_summary (test_frozen_results.FrozenResultsTests.test_summary) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.602s
+
+OK
