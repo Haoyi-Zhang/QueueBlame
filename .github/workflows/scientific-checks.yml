@@ -13,7 +13,6 @@ jobs:
     env:
       PYTHONDONTWRITEBYTECODE: '1'
       PYTHONUTF8: '1'
-      SCIENCE_OUTPUT: ${{ runner.temp }}/cbcqv-scientific-output
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -25,6 +24,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          export SCIENCE_OUTPUT="$RUNNER_TEMP/cbcqv-scientific-output"
           mkdir -p "$SCIENCE_OUTPUT"
           export TMPDIR="$SCIENCE_OUTPUT"
           ulimit -v 2097152
