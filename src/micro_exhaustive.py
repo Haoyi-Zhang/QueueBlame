@@ -64,9 +64,9 @@ def main() -> None:
         "sampled_core_instances": sum(item["sampled_core_instances"] for item in families),
         "core_size_mismatches": sum(item["core_size_mismatches"] for item in families),
     }
+    write_json(Path(args.output), summary)
     if summary["feasibility_mismatches"] or summary["core_size_mismatches"]:
         raise AssertionError(summary)
-    write_json(Path(args.output), summary)
 
 
 if __name__ == "__main__":

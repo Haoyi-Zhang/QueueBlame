@@ -23,12 +23,21 @@
     {
       "correction": "candidate DOI ended in 1498494 and resolved to an unrelated paper; corrected to IEEE document 1498492",
       "key": "xie2005reachability"
+    },
+    {
+      "correction": "inherited CP DOI and venue did not describe the cited AAAI paper; aligned with the first-party AAAI paper on pages 167--172",
+      "key": "junker2004quickxplain"
+    },
+    {
+      "correction": "inherited Transactions record did not describe the cited WF2Q paper; aligned with the authors' INFOCOM 1996 listing and paper",
+      "key": "bennett1996wf2q"
     }
   ],
   "count": 55,
   "failures": [],
   "note": "Metadata were curated against stable DOI landing pages or first-party publisher/conference pages. This audit records identifiers and corrections; it does not redistribute paper PDFs.",
   "performed_on": "2026-09-25",
+  "record_updates_on": "2026-10-06 (Junker and Bennett identity records and Darwiche/Marquis author field only; other rows not newly source-verified)",
   "records": [
     {
       "author": "David Gale",
@@ -232,12 +241,13 @@
     },
     {
       "author": "Ulrich Junker",
-      "identifier": "10.1007/978-3-540-30201-8_52",
+      "correction": "inherited CP DOI and venue did not describe the cited AAAI paper; aligned with the first-party AAAI paper on pages 167--172",
+      "identifier": "https://cdn.aaai.org/AAAI/2004/AAAI04-027.pdf",
       "key": "junker2004quickxplain",
       "theme": "diagnosis",
       "title": "QUICKXPLAIN: Preferred Explanations and Relaxations for Over-Constrained Problems",
       "verification_status": "curated_against_stable_identifier",
-      "verification_url": "https://doi.org/10.1007/978-3-540-30201-8_52",
+      "verification_url": "https://cdn.aaai.org/AAAI/2004/AAAI04-027.pdf",
       "year": 2004
     },
     {
@@ -251,7 +261,7 @@
       "year": 2008
     },
     {
-      "author": "Adnan Darwiche",
+      "author": "Adnan Darwiche and Pierre Marquis",
       "identifier": "10.1613/jair.989",
       "key": "darwiche2002kcmap",
       "theme": "diagnosis",
@@ -488,12 +498,13 @@
     },
     {
       "author": "Jon C. R. Bennett and Hui Zhang",
-      "identifier": "10.1109/90.502237",
+      "correction": "inherited Transactions record did not describe the cited WF2Q paper; aligned with the authors' INFOCOM 1996 listing and paper",
+      "identifier": "10.1109/INFCOM.1996.497885",
       "key": "bennett1996wf2q",
       "theme": "queueing",
       "title": "WF2Q: Worst-Case Fair Weighted Fair Queueing",
       "verification_status": "curated_against_stable_identifier",
-      "verification_url": "https://doi.org/10.1109/90.502237",
+      "verification_url": "https://www.cs.cmu.edu/~hzhang/QoS.html",
       "year": 1996
     },
     {

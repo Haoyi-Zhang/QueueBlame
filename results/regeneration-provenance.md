@@ -15,7 +15,9 @@ in the supplied archive matched their newly generated counterparts exactly as
 JSON values. The other 84 certificates and all aggregate result records are a
 fresh deterministic regeneration from the retained corpus and source.
 
-Measured for this regeneration in the current single-process environment:
+The following inherited measurements describe the earlier regeneration
+recorded by the supplied package (the frozen summary identifies Python 3.13.5
+on Linux). They are not measurements of subsequent checks on another host:
 
 - producer/oracle/certificate/mutation campaign: 2.38 s user CPU, 2.03 s wall,
   97,452 KiB maximum resident set size;

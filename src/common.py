@@ -15,8 +15,16 @@ def canonical_json(data: Any) -> str:
 
 
 def load_json(path: str | Path) -> Any:
+    def unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+        value: dict[str, Any] = {}
+        for key, entry in pairs:
+            if key in value:
+                raise ValueError(f"duplicate JSON key: {key}")
+            value[key] = entry
+        return value
+
     with Path(path).open("r", encoding="utf-8") as handle:
-        return json.load(handle)
+        return json.load(handle, object_pairs_hook=unique_object)
 
 
 def write_json(path: str | Path, data: Any) -> None:

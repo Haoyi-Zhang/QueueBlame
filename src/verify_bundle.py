@@ -5,8 +5,7 @@ from __future__ import annotations
 import argparse,json
 from collections import Counter
 from pathlib import Path
-from checker import Rejection,verify
-from common import load_json
+from checker import Rejection,verify,load_json_strict as load_json
 from mutations import generate
 
 def main()->None:

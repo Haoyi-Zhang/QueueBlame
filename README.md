@@ -18,11 +18,11 @@ This is not an upstream queue verifier, a causal fault diagnosis, a noisy-counte
 - `src/mutations.py`: complete deterministic malformed-certificate generator; there is no tail limit.
 - `src/run.py`: candidate production, checking, oracle comparison, and negative-test execution.
 - `src/verify_bundle.py`: replays all frozen certificates and reconstructs/replays every frozen negative mutation. It reads, but does not recompute, the stored micro-exhaustive record.
-- `src/compare.py`: compares every deterministic scientific field and every certificate in two result directories.
+- `src/compare.py`: compares every deterministic scientific field and every certificate in two result directories, preserving JSON scalar types. Its corpus-only mode applies the same comparison to generated and frozen inputs.
 
 ## Retained result
 
-The current frozen result was freshly regenerated from the retained 96-case corpus after the checker repair. The unavailable prior run was not claimed as recovered. The first 12 surviving old certificates were byte-for-byte equivalent as parsed JSON to the regenerated certificates; cases 012-095 and all aggregate result files are new deterministic outputs of the retained source. See `results/regeneration-provenance.md`.
+The current frozen result was freshly regenerated from the retained 96-case corpus after the checker repair. The unavailable prior run was not claimed as recovered. The first 12 surviving old certificates matched the regenerated certificates as parsed JSON values; this is not a claim of serialized byte identity. Cases 012-095 and all aggregate result files are new deterministic outputs of the retained source. See `results/regeneration-provenance.md` for the earlier run's provenance and historical host timings.
 
 The frozen evidence contains:
 
@@ -43,7 +43,7 @@ python3 -m unittest discover -s tests -p 'test_*.py' -v
 python3 src/verify_bundle.py
 ```
 
-The test suite covers exact runtime types, `0/false`, `1/true`, equal-valued floats, production-side path vectors, selected-counter ordering, minimum-core checks, import boundaries, and duplicate JSON keys. `verify_bundle.py` actually sends every deterministic mutation to the checker and validates mutation-set uniqueness and ledger equality. It reports micro-exhaustive totals as **recorded, not recomputed**.
+The test suite covers exact runtime types, `0/false`, `1/true`, equal-valued floats, production-side path vectors, selected-counter ordering, minimum-core checks, import boundaries, and duplicate JSON keys. `verify_bundle.py` uses the standalone checker's duplicate-key-rejecting loader, actually sends every deterministic mutation to the checker, and validates mutation-set uniqueness and ledger equality. It reports micro-exhaustive totals as **recorded, not recomputed**. Separate gate regressions check typed result/corpus comparison and retention of mismatch counts before the exhaustive driver's nonzero failure exit.
 
 ## Full isolated regeneration
 
@@ -58,11 +58,16 @@ Manual equivalent:
 ```bash
 work="$(mktemp -d)"
 python3 src/generate_corpus.py --output "$work/corpus.json"
+python3 src/compare.py --reference-corpus data/corpus.json --candidate-corpus "$work/corpus.json"
 python3 src/run.py --corpus "$work/corpus.json" --output "$work/run"
 python3 src/micro_exhaustive.py --output "$work/run/micro-exhaustive.json"
 python3 src/verify_bundle.py --corpus "$work/corpus.json" --results "$work/run"
 python3 src/compare.py results/frozen "$work/run"
 ```
+
+Comparison ignores JSON whitespace and object-key order, not scalar types or list order; in particular, `1`, `true`, and `1.0` are distinct. Duplicate object keys are rejected before comparison. Only the summary's `python` and `platform` metadata fields are excluded. The exhaustive driver writes its complete count record even when a feasibility or minimum-core discrepancy makes the run fail.
+
+The separate `.github/workflows/scientific-checks.yml` is configured to run the tests, corpus comparison, isolated regeneration, exhaustive recomputation, replay and frozen-result comparison from this flat artifact root. It imposes whole-run time and process resource limits and uploads raw outputs even on failure. This configuration does not establish that a hosted run has executed.
 
 ## Contract details
 
