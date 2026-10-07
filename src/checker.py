@@ -145,9 +145,11 @@ def parse_matrix(matrix: Any, n: int, width: int, name: str) -> list[list[int]]:
 def parse_port_list(value: Any, n: int, name: str, *, nonempty: bool = False) -> list[int]:
     reject(type(value) is list and (bool(value) or not nonempty), f"{name}: expected list")
     ports: list[int] = []
+    seen: set[int] = set()
     for index, raw in enumerate(value):
         port = integer(raw, f"{name}[{index}]", 0, n - 1)
-        reject(port not in ports, f"{name}: duplicate port")
+        reject(port not in seen, f"{name}: duplicate port")
+        seen.add(port)
         ports.append(port)
     return sorted(ports)
 

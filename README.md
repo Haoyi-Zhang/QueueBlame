@@ -45,6 +45,14 @@ python3 src/verify_bundle.py
 
 The test suite covers exact runtime types, `0/false`, `1/true`, equal-valued floats, production-side path vectors, selected-counter ordering, minimum-core checks, import boundaries, and duplicate JSON keys. `verify_bundle.py` uses the standalone checker's duplicate-key-rejecting loader, actually sends every deterministic mutation to the checker, and validates mutation-set uniqueness and ledger equality. It reports micro-exhaustive totals as **recorded, not recomputed**. Separate gate regressions check typed result/corpus comparison and retention of mismatch counts before the exhaustive driver's nonzero failure exit.
 
+Port-list parsing now keeps a local seen set after strict scalar/range checks and returns the same sorted unique list. It does not allocate storage proportional to the declared dimension or change first-error priority. The five additional finite parser regressions use an independent pairwise reference on 6,666 short lists, exact type/subclass and large-ID boundaries, unchanged input/call-local state, and a hand-specified matrix/deletion certificate. They are separate from the retained 25-test suite and explicitly invoked by scientific CI:
+
+```bash
+python3 -B tests/ports_regression.py
+```
+
+Duplicate membership has expected constant cost in the ordinary hash-operation model, followed by the existing sort; no end-to-end or measured timing improvement is claimed. All matrix replay, minimum-core, mutation and historical-result checks remain.
+
 ## Full isolated regeneration
 
 ```bash

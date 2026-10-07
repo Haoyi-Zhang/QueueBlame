@@ -32,6 +32,7 @@ jobs:
           ulimit -f 131072
           timeout --signal=TERM --kill-after=10s 300s bash -euo pipefail <<'CHECKS' 2>&1 | tee "$SCIENCE_OUTPUT/whole-run.log"
           python -B -m unittest discover -s tests -p 'test_*.py' -v 2>&1 | tee "$SCIENCE_OUTPUT/tests.log"
+          python -B tests/ports_regression.py 2>&1 | tee "$SCIENCE_OUTPUT/ports-regression.log"
           python -B src/generate_corpus.py --output "$SCIENCE_OUTPUT/corpus.json" 2>&1 | tee "$SCIENCE_OUTPUT/corpus.log"
           python -B src/compare.py --reference-corpus data/corpus.json --candidate-corpus "$SCIENCE_OUTPUT/corpus.json" 2>&1 | tee "$SCIENCE_OUTPUT/corpus-comparison.log"
           python -B src/run.py --corpus "$SCIENCE_OUTPUT/corpus.json" --output "$SCIENCE_OUTPUT/results" 2>&1 | tee "$SCIENCE_OUTPUT/campaign.log"
