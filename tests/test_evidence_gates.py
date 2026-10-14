@@ -133,6 +133,8 @@ class EvidenceGateTests(unittest.TestCase):
                     expected = {key: str(record[key]) for key in ("type", "author", "title", "journal", "booktitle", "series", "publisher", "volume", "number", "pages", "year", "doi") if record.get(key)}
                     if record["key"] == "ford1956maxflow":
                         expected["author"] = "Ford, Jr., L. R. and Delbert R. Fulkerson"
+                    if record["key"] == "wilson2014bestpractices":
+                        expected["author"] = expected["author"].replace("Neil P. Chue Hong", "Chue Hong, Neil P.")
                     expected["url"] = "https://doi.org/" + record["doi"] if record.get("doi") else record["url"]
                     self.assertEqual(entries[record["key"]], expected)
 

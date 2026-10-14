@@ -16,7 +16,7 @@ def bib_author(record: dict) -> str:
     """Preserve the paper's existing BibTeX family/suffix/given-name encoding."""
     if record['key'] == 'ford1956maxflow':
         return 'Ford, Jr., L. R. and Delbert R. Fulkerson'
-    return record['author']
+    return record['author'].replace('Neil P. Chue Hong', 'Chue Hong, Neil P.')
 
 
 entries: list[str] = []
