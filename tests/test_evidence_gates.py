@@ -14,12 +14,14 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT / "references"))
 
 import compare
 import micro_exhaustive
 import verify_bundle
 from checker import Rejection
 from common import load_json
+from reference_history import reconcile_audit_records
 
 
 class EvidenceGateTests(unittest.TestCase):
@@ -113,7 +115,8 @@ class EvidenceGateTests(unittest.TestCase):
         references = ROOT / "references"
         records = load_json(references / "resolved-references.json")["records"]
         report = load_json(references / "reference-audit.json")
-        audited = {item["key"]: item for item in report["records"]}
+        overlay = load_json(references / "current-reference-corrections.json")
+        self.assertEqual(reconcile_audit_records(records, report, overlay), 1)
         paths = [references / "references.bib"]
         paper = ROOT.parent / "paper" / "references.bib"
         if paper.is_file():
@@ -121,15 +124,41 @@ class EvidenceGateTests(unittest.TestCase):
         for path in paths:
             entries = {}
             for entry_type, key, body in re.findall(r"(?ms)^@(\w+)\{([^,]+),\n(.*?)^\}", path.read_text(encoding="utf-8")):
+                if entry_type == "IEEEtranBSTCTL":
+                    continue
                 entries[key] = {"type": entry_type, **dict(re.findall(r"(?m)^\s*(\w+)\s*=\s*\{(.*)\},?\s*$", body))}
             self.assertEqual(set(entries), {record["key"] for record in records})
             for record in records:
                 with self.subTest(bibliography=path.name, key=record["key"]):
                     expected = {key: str(record[key]) for key in ("type", "author", "title", "journal", "booktitle", "series", "publisher", "volume", "number", "pages", "year", "doi") if record.get(key)}
+                    if record["key"] == "ford1956maxflow":
+                        expected["author"] = "Ford, Jr., L. R. and Delbert R. Fulkerson"
                     expected["url"] = "https://doi.org/" + record["doi"] if record.get("doi") else record["url"]
                     self.assertEqual(entries[record["key"]], expected)
-                    for key in ("identifier", "verification_url", "title", "author", "theme", "year"):
-                        self.assertEqual(audited[record["key"]][key], record[key])
+
+    def test_reference_history_rejects_unrecorded_or_inexact_changes(self):
+        references = ROOT / "references"
+        records = load_json(references / "resolved-references.json")["records"]
+        report = load_json(references / "reference-audit.json")
+        overlay = load_json(references / "current-reference-corrections.json")
+        variants = []
+        absent = copy.deepcopy(overlay)
+        absent["corrections"] = []
+        variants.append((records, absent))
+        for side in ("before", "after"):
+            changed = copy.deepcopy(overlay)
+            changed["corrections"][0][side]["identifier"] = "10.0000/incorrect"
+            variants.append((records, changed))
+        drift = copy.deepcopy(records)
+        drift[0]["title"] += " changed"
+        variants.append((drift, overlay))
+        duplicate = copy.deepcopy(overlay)
+        duplicate["corrections"] *= 2
+        variants.append((records, duplicate))
+        for current, changes in variants:
+            with self.subTest(changes=changes):
+                with self.assertRaises(ValueError):
+                    reconcile_audit_records(current, report, changes)
 
 
 if __name__ == "__main__":

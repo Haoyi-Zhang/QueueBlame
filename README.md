@@ -91,6 +91,8 @@ The separate `.github/workflows/scientific-checks.yml` runs the tests, corpus co
 
 `references/` retains the inherited candidate manifest, the resolved 55-record bibliography registry, documented identifier corrections, generated BibTeX and citation-group files, and an offline integrity audit. Bibliographic resolution is not required for the scientific replay and no paper PDFs are redistributed.
 
+`reference-audit.json` remains a historical observation. The current Liffiton identity is bound to it by the exact before/after fields in `current-reference-corrections.json`; `reference_history.py` rejects unrecorded drift, stale postimages, and duplicate corrections. `verify_references.py` reports the historical eight corrections separately from the nine currently documented corrections. The bibliography regression excludes the IEEE bibliography-style control record from scholarly-entry counts and checks Ford's retained BibTeX suffix encoding. A separate regression mutates correction bindings to require rejection; it does not re-resolve a publisher record or rerun the historical scientific campaigns.
+
 ## License
 
 See `LICENSE`.

@@ -14,13 +14,22 @@ group_text = (PAPER / "reference-groups.tex").read_text(encoding="utf-8")
 aux_text = (PAPER / "main.aux").read_text(encoding="utf-8")
 bbl_text = (PAPER / "main.bbl").read_text(encoding="utf-8")
 
-bib_keys = re.findall(r"(?m)^@\w+\{([^,]+),", bib_text)
+bib_keys = re.findall(r"(?m)^@(?!IEEEtranBSTCTL\b)\w+\{([^,]+),", bib_text)
+control_keys = set(re.findall(r"(?m)^@IEEEtranBSTCTL\{([^,]+),", bib_text))
 if len(bib_keys) != len(set(bib_keys)):
     raise SystemExit("duplicate BibTeX key")
 
-macro_defs: dict[str, list[str]] = {}
-for macro, keys in re.findall(r"\\newcommand\{\\([A-Za-z]+Refs)\}\{\\cite\{([^}]*)\}\}", group_text):
-    macro_defs[macro] = [key.strip() for key in keys.split(",") if key.strip()]
+def parse_macro_definitions(group_text):
+    """Collect each contextual macro's citations, including multiple role clauses."""
+    definitions = {}
+    for macro, body in re.findall(r"(?m)^\\newcommand\{\\([A-Za-z]+Refs)\}\{(.*)\}$", group_text):
+        keys = []
+        for block in re.findall(r"\\cite\{([^}]*)\}", body):
+            keys.extend(key.strip() for key in block.split(",") if key.strip())
+        definitions[macro] = keys
+    return definitions
+
+macro_defs = parse_macro_definitions(group_text)
 
 macro_uses: dict[str, list[int]] = {}
 for macro in macro_defs:
@@ -36,6 +45,9 @@ for block in re.findall(r"\\cite\{([^}]*)\}", main_text):
 aux_keys = set()
 for block in re.findall(r"\\citation\{([^}]*)\}", aux_text):
     aux_keys.update(key.strip() for key in block.split(",") if key.strip())
+# cite.sty's bstctlcite records formatting controls in the aux, not as references.
+aux_control_keys = aux_keys & control_keys
+aux_keys.difference_update(control_keys)
 bbl_keys = set(re.findall(r"\\bibitem(?:\[[^]]*\])?\{([^}]+)\}", bbl_text))
 bib_set = set(bib_keys)
 
@@ -51,6 +63,8 @@ report = {
     "schema": "cbcqv-bibliography-usage-audit-v1",
     "status": "PASS" if all(checks.values()) else "FAIL",
     "reference_count": len(bib_keys),
+    "bibliography_control_keys": sorted(control_keys),
+    "aux_control_keys": sorted(aux_control_keys),
     "checks": checks,
     "macro_uses": macro_uses,
     "macro_key_counts": {macro: len(keys) for macro, keys in sorted(macro_defs.items())},

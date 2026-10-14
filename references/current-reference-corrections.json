@@ -1,0 +1,17 @@
+{
+  "schema": "cbcqv-reference-corrections-v1",
+  "corrections": [
+    {
+      "key": "liffiton2008mus",
+      "before": {
+        "identifier": "10.1007/s10601-007-9034-z",
+        "verification_url": "https://doi.org/10.1007/s10601-007-9034-z"
+      },
+      "after": {
+        "identifier": "10.1007/s10817-007-9084-z",
+        "verification_url": "https://link.springer.com/article/10.1007/s10817-007-9084-z"
+      },
+      "source": "https://link.springer.com/article/10.1007/s10817-007-9084-z"
+    }
+  ]
+}
