@@ -93,6 +93,21 @@ The separate `.github/workflows/scientific-checks.yml` runs the tests, corpus co
 
 `reference-audit.json` remains a historical observation. The current Liffiton identity is bound to it by the exact before/after fields in `current-reference-corrections.json`; `reference_history.py` rejects unrecorded drift, stale postimages, and duplicate corrections. `verify_references.py` reports the historical eight corrections separately from the nine currently documented corrections. The bibliography regression excludes the IEEE bibliography-style control record from scholarly-entry counts and checks Ford's retained BibTeX suffix encoding. A separate regression mutates correction bindings to require rejection; it does not re-resolve a publisher record or rerun the historical scientific campaigns.
 
+## Optional manuscript diagrams
+
+The scientific commands above use the standard library. Rendering the two
+manuscript schematics is a separate optional step:
+
+```bash
+python3 -m pip install -r requirements-figures.txt
+python3 -B figures/draw_schematics.py
+python3 -B figures/check_figures.py
+```
+
+In the full project, `paper/build.sh` regenerates the consumed copies in
+`paper/figures` before compiling. The standalone repository has no dependency
+on that directory, and rendering does not change scientific results.
+
 ## License
 
 See `LICENSE`.

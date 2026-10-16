@@ -40,6 +40,10 @@ jobs:
           python -B src/verify_bundle.py --corpus "$SCIENCE_OUTPUT/corpus.json" --results "$SCIENCE_OUTPUT/results" 2>&1 | tee "$SCIENCE_OUTPUT/replay.log"
           python -B src/compare.py results/frozen "$SCIENCE_OUTPUT/results" 2>&1 | tee "$SCIENCE_OUTPUT/comparison.log"
           CHECKS
+      - name: Verify consumed Python vector diagrams
+        run: |
+          python -B -m pip install --disable-pip-version-check -r requirements-figures.txt
+          python -B figures/check_figures.py
       - name: Retain raw outputs even after a failed gate
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
